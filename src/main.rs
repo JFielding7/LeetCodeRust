@@ -11,14 +11,9 @@ mod split_array_largest_sum;
 mod palindrome_partitioning;
 mod find_min;
 
-use rand::Rng;
-use split_array_largest_sum::Solution;
+use find_min::Solution;
 
 fn main() {
-    let mut rng = rand::thread_rng();
-
-    // Generate a Vec of 100 random i32 values between 0 and 100
-    let nums: Vec<i32> = (0..1000000).map(|_| rng.gen_range(0..100)).collect();
-    let k = 23;
-    println!("{}", Solution::split_array(nums, k))
+    let v = vec![2, 0, 1];
+    println!("{}", Solution::find_min(v));
 }
