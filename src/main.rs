@@ -11,6 +11,7 @@ mod split_array_largest_sum;
 mod palindrome_partitioning;
 mod find_min;
 mod find_min_duplicates;
+mod min_stack;
 
 use find_min_duplicates::Solution;
 
