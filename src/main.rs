@@ -10,10 +10,11 @@ mod count_of_range_sum;
 mod split_array_largest_sum;
 mod palindrome_partitioning;
 mod find_min;
+mod find_min_duplicates;
 
-use find_min::Solution;
+use find_min_duplicates::Solution;
 
 fn main() {
-    let v = vec![2, 0, 1];
+    let v = vec![1, 2, 2, 3, 1];
     println!("{}", Solution::find_min(v));
 }
