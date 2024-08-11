@@ -49,3 +49,60 @@
 //     }
 //     None
 // }
+
+// use std::collections::{HashSet, VecDeque};
+// use std::rc::Rc;
+//
+// pub struct Solution {}
+//
+// const BOARD_LEN: i32 = 18;
+// const ROW_BITS: usize = 9;
+// const COL_BITS: usize = 3;
+// const CELL_MASK: i32 = 0b111;
+// const SOLVED: i32 = 1 + (2 << 3) + (3 << 6) + (4 << 9) + (5 << 12) + (15 << BOARD_LEN);
+// const DELTA: [(i32, i32); 4] = [(-3, 9), (3, 6), (-9, -1), (9, -1)];
+//
+// pub struct Node {
+//     pub pos: i32,
+//     pub prev: Option<Rc<Node>>
+// }
+//
+// impl Solution {
+//     pub fn sliding_puzzle(board: Vec<Vec<i32>>) -> Option<Rc<Node>> {
+//         let mut start: i32 = 0;
+//         for (i, row) in board.iter().enumerate() {
+//             for (j, &num) in row.iter().enumerate() {
+//                 let shift = (i * ROW_BITS + j * COL_BITS) as i32;
+//                 start |= num << shift;
+//                 if num == 0 {
+//                     start |= shift << BOARD_LEN;
+//                 }
+//             }
+//         }
+//         if start == SOLVED {
+//             return Some(Rc::new(Node { pos: 0, prev: None }));
+//         }
+//
+//         let mut queue: VecDeque<(i32, Rc<Node>)> = VecDeque::from([(start, Rc::new(Node { pos: start, prev: None }))]);
+//         let mut visited: HashSet<i32> = HashSet::from([start]);
+//         while let Some((pos, node)) = queue.pop_front() {
+//             let empty_pos = pos >> BOARD_LEN;
+//             for (change, illegal_cell) in DELTA {
+//                 let next_empty_pos = empty_pos + change;
+//                 if empty_pos != illegal_cell && next_empty_pos > -1 && next_empty_pos < BOARD_LEN {
+//                     let mut next_pos = pos + (change << BOARD_LEN)
+//                         & !(CELL_MASK << next_empty_pos)
+//                         | ((pos >> next_empty_pos & CELL_MASK) << empty_pos);
+//                     if next_pos == SOLVED {
+//                         return Some(Rc::new(Node { pos: next_pos, prev: Some(node) }));
+//                     }
+//                     if !visited.contains(&next_pos) {
+//                         visited.insert(next_pos);
+//                         queue.push_back((next_pos, Rc::new(Node { pos: next_pos, prev: Some(Rc::clone(&node)) })));
+//                     }
+//                 }
+//             }
+//         }
+//         None
+//     }
+// }

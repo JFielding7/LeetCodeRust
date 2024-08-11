@@ -15,12 +15,30 @@ mod min_stack;
 mod median_finder;
 mod palindrome_pairs;
 mod reverse_pairs;
+mod sliding_puzzle;
 
-use reverse_pairs::Solution;
+use sliding_puzzle::Solution;
 
 fn main() {
-    let nums = vec![2147483647,1073741824,1073741823];
-    println!("{}", Solution::reverse_pairs(nums));
+    let b = [[3,2,4],[1,5,0]];
+    let board: Vec<Vec<i32>> = b.into_iter().map(|arr| Vec::from(arr)).collect();
+    let mut moves = &Solution::sliding_puzzle(board);
+    println!("{moves}");
+    // while let Some(node) = curr {
+    //     let prev = &node.prev;
+    //     let mut i = 0;
+    //     let pos = node.pos;
+    //     while i < 18 {
+    //         print!("{} ", pos >> i & 7);
+    //         if i % 9 == 6 { println!(); }
+    //         i += 3;
+    //     }
+    //     println!("{}", pos >> 18);
+    //     println!("{moves}");
+    //     println!();
+    //     moves += 1;
+    //     curr = prev;
+    // }
     // let mut m = MedianFinder::new();
     // m.add_num(32);
     // m.add_num(12);
