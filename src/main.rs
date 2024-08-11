@@ -12,10 +12,20 @@ mod palindrome_partitioning;
 mod find_min;
 mod find_min_duplicates;
 mod min_stack;
+mod median_finder;
+mod palindrome_pairs;
 
-use find_min_duplicates::Solution;
+use palindrome_pairs::Solution;
 
 fn main() {
-    let v = vec![1, 2, 2, 3, 1];
-    println!("{}", Solution::find_min(v));
+    let words = ["a",""];
+    let v: Vec<String> = words.iter().map(|s| s.to_string()).collect();
+    let pairs = Solution::palindrome_pairs(v);
+    println!("{pairs:?}");
+    // let mut m = MedianFinder::new();
+    // m.add_num(32);
+    // m.add_num(12);
+    // m.add_num(45);
+    // println!("{}", m.get(2));
+    // m.print()
 }
