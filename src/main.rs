@@ -14,14 +14,13 @@ mod find_min_duplicates;
 mod min_stack;
 mod median_finder;
 mod palindrome_pairs;
+mod reverse_pairs;
 
-use palindrome_pairs::Solution;
+use reverse_pairs::Solution;
 
 fn main() {
-    let words = ["a",""];
-    let v: Vec<String> = words.iter().map(|s| s.to_string()).collect();
-    let pairs = Solution::palindrome_pairs(v);
-    println!("{pairs:?}");
+    let nums = vec![2147483647,1073741824,1073741823];
+    println!("{}", Solution::reverse_pairs(nums));
     // let mut m = MedianFinder::new();
     // m.add_num(32);
     // m.add_num(12);
