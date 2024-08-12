@@ -18,6 +18,7 @@ mod reverse_pairs;
 mod sliding_puzzle;
 mod sliding_window_median;
 mod palindrome_partitioning_iii;
+mod min_insertions_to_make_palindrome;
 
 use palindrome_partitioning_iii::Solution;
 
