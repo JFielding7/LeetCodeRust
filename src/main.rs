@@ -19,6 +19,7 @@ mod sliding_puzzle;
 mod sliding_window_median;
 mod palindrome_partitioning_iii;
 mod min_insertions_to_make_palindrome;
+mod two_sum;
 
 use palindrome_partitioning_iii::Solution;
 
