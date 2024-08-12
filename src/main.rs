@@ -21,14 +21,10 @@ mod palindrome_partitioning_iii;
 mod min_insertions_to_make_palindrome;
 mod two_sum;
 mod word_ladder;
+mod permutation_sequence;
 
-use word_ladder::Solution;
+use permutation_sequence::Solution;
 
 fn main() {
-    let begin_word = "hit";
-    let end_word = "cog";
-    let list = ["hot", "dot", "dog", "lot", "log", "cog"];
-    unsafe {
-        println!("{}", Solution::ladder_length(begin_word.to_string(), end_word.to_string(), list.iter().map(|s| s.to_string()).collect()));
-    }
+    println!("{}", Solution::get_permutation(3,3 ))
 }
