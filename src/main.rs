@@ -20,11 +20,15 @@ mod sliding_window_median;
 mod palindrome_partitioning_iii;
 mod min_insertions_to_make_palindrome;
 mod two_sum;
+mod word_ladder;
 
-use palindrome_partitioning_iii::Solution;
+use word_ladder::Solution;
 
 fn main() {
-    let s = "mekt";
-    let k = 3;
-    println!("{}", Solution::palindrome_partition(s.to_string(), k));
+    let begin_word = "hit";
+    let end_word = "cog";
+    let list = ["hot", "dot", "dog", "lot", "log", "cog"];
+    unsafe {
+        println!("{}", Solution::ladder_length(begin_word.to_string(), end_word.to_string(), list.iter().map(|s| s.to_string()).collect()));
+    }
 }
