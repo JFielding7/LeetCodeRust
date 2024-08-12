@@ -106,3 +106,25 @@
 //         None
 //     }
 // }
+
+// while let Some(node) = curr {
+//     let prev = &node.prev;
+//     let mut i = 0;
+//     let pos = node.pos;
+//     while i < 18 {
+//         print!("{} ", pos >> i & 7);
+//         if i % 9 == 6 { println!(); }
+//         i += 3;
+//     }
+//     println!("{}", pos >> 18);
+//     println!("{moves}");
+//     println!();
+//     moves += 1;
+//     curr = prev;
+// }
+// let mut m = MedianFinder::new();
+// m.add_num(32);
+// m.add_num(12);
+// m.add_num(45);
+// println!("{}", m.get(2));
+// m.print()
