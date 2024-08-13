@@ -22,9 +22,10 @@ mod min_insertions_to_make_palindrome;
 mod two_sum;
 mod word_ladder;
 mod permutation_sequence;
+mod nth_magical_number;
 
-use permutation_sequence::Solution;
+use nth_magical_number::Solution;
 
 fn main() {
-    println!("{}", Solution::get_permutation(3,3 ))
+    println!("{}", Solution::nth_magical_number(4, 2, 3));
 }
