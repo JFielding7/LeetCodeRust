@@ -23,9 +23,12 @@ mod two_sum;
 mod word_ladder;
 mod permutation_sequence;
 mod nth_magical_number;
+mod candy;
+mod longest_valid_parentheses;
 
-use nth_magical_number::Solution;
+use candy::Solution;
 
 fn main() {
-    println!("{}", Solution::nth_magical_number(4, 2, 3));
+    let ratings = [1,6,10,8,7,3,2];
+    println!("{}", Solution::candy(ratings.to_vec()));
 }
