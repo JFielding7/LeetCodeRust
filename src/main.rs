@@ -25,11 +25,11 @@ mod permutation_sequence;
 mod nth_magical_number;
 mod candy;
 mod longest_valid_parentheses;
+mod kth_smallest_pair_distance;
 
-use candy::Solution;
+use kth_smallest_pair_distance::Solution;
 
 fn main() {
-    let ratings = [1,3,2,2]; //[1,6,10,8,7,3,2];
-    // [1,2,3,1,1,1,2,3,4,1,2]
-    println!("{}", Solution::candy(ratings.to_vec()));
+    let vec = [1,3,1];
+    println!("{}", Solution::smallest_distance_pair(vec.to_vec(), 1));
 }
