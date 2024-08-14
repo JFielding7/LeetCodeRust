@@ -8,11 +8,9 @@ macro_rules! max_valid {
         let mut opened = 0;
         let mut closed = 0;
         for chr in $iter {
-            if chr == '(' {
-                opened += 1;
-            } else {
-                closed += 1;
-            }
+            let is_open = chr == '(';
+            opened += is_open as i32;
+            closed += !is_open as i32;
             if opened == closed {
                 longest = max(longest, opened + closed);
             } else if opened $cmp closed {

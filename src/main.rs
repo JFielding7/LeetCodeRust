@@ -29,6 +29,7 @@ mod longest_valid_parentheses;
 use candy::Solution;
 
 fn main() {
-    let ratings = [1,6,10,8,7,3,2];
+    let ratings = [1,3,2,2]; //[1,6,10,8,7,3,2];
+    // [1,2,3,1,1,1,2,3,4,1,2]
     println!("{}", Solution::candy(ratings.to_vec()));
 }

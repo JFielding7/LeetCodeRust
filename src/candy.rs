@@ -1,25 +1,38 @@
+use std::cmp::min;
+
 pub struct Solution {}
+
+macro_rules! update_count {
+    ($curr:expr, $prev:expr) => { ($curr * ($curr + 1) >> 1) - min($curr, $prev) };
+}
 
 impl Solution {
     pub fn candy(ratings: Vec<i32>) -> i32 {
         let length = ratings.len();
         if length == 1 { return 1; }
+
         let mut count = 0;
         let mut start = 0;
-        let mut prev = ratings[1];
-        let mut prev_diff = ratings[1] - ratings[0];
-        for i in 2..length {
+        let mut prev_len = 0;
+        let mut prev_diff = 0;
+        let mut prev = ratings[0];
+
+        for i in 1..length {
             let rating = ratings[i];
-            let curr_diff = rating - prev;
-            if curr_diff == 0 || (curr_diff > 0) != (prev_diff > 0) {
-                let is_local_min = (curr_diff > 0 && prev_diff < 0) as usize;
-                count += ((i - start) * (i - start + 1) >> 1) - is_local_min;
-                start = i - is_local_min;
-                println!("{count} {start}");
+            let diff = rating - prev;
+            if diff == 0 {
+                count += update_count!(i - start, prev_len);
+                prev_len = 0;
+                start = i;
             }
+            else if prev_diff != 0 && (diff > 0) != (prev_diff > 0) {
+                count += update_count!(i - start, prev_len) - ((prev_diff < 0) as usize);
+                prev_len = if prev_diff > 0 { i - start } else { 0 };
+                start = i - 1;
+            }
+            prev_diff = diff;
             prev = rating;
-            prev_diff = curr_diff;
         }
-        (count + ((length - start) * (length - start + 1) >> 1)) as i32
+        (count + update_count!(length - start, prev_len)) as i32
     }
 }
