@@ -26,10 +26,24 @@ mod nth_magical_number;
 mod candy;
 mod longest_valid_parentheses;
 mod kth_smallest_pair_distance;
+mod longest_duplicate_substring;
 
-use kth_smallest_pair_distance::Solution;
+use longest_duplicate_substring::Solution;
+
+use rand::{distr::Alphanumeric, Rng}; // 0.8
+
+fn rand() -> String {
+    let s: String = rand::thread_rng()
+        .sample_iter(&Alphanumeric)
+        .take(30000)
+        .map(char::from)
+        .collect();
+    s
+}
 
 fn main() {
-    let vec = [1,3,1];
-    println!("{}", Solution::smallest_distance_pair(vec.to_vec(), 1));
+    let s = rand();
+    // println!("{s}");
+    println!("{}", Solution::longest_dup_substring(s));
+    unsafe { println!("{}", longest_duplicate_substring::count); }
 }

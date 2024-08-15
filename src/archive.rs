@@ -128,3 +128,16 @@
 // m.add_num(45);
 // println!("{}", m.get(2));
 // m.print()
+
+// pub fn pow(b: u64, mut n: u64, m: u64) -> u64 {
+//     let mut curr_pow = b;
+//     let mut res = 1;
+//     while n != 0 {
+//         if (n & 1) == 1 {
+//             res = res * curr_pow % m;
+//         }
+//         curr_pow = curr_pow * curr_pow % m;
+//         n >>= 1;
+//     }
+//     res
+// }
