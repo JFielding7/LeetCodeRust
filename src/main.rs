@@ -27,8 +27,9 @@ mod candy;
 mod longest_valid_parentheses;
 mod kth_smallest_pair_distance;
 mod longest_duplicate_substring;
+mod max_points_on_line;
 
-use longest_duplicate_substring::Solution;
+use max_points_on_line::Solution;
 
 use rand::{distr::Alphanumeric, Rng}; // 0.8
 
@@ -42,8 +43,7 @@ fn rand() -> String {
 }
 
 fn main() {
-    let s = rand();
-    // println!("{s}");
-    println!("{}", Solution::longest_dup_substring(s));
-    unsafe { println!("{}", longest_duplicate_substring::count); }
+    let points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]];
+    println!("{}", Solution::gcd(-12, 8));
+    println!("{}", Solution::max_points(points.iter().map(|p|p.to_vec()).collect()))
 }
