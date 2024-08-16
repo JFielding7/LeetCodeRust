@@ -28,6 +28,7 @@ mod longest_valid_parentheses;
 mod kth_smallest_pair_distance;
 mod longest_duplicate_substring;
 mod max_points_on_line;
+mod stock_iv;
 
 use max_points_on_line::Solution;
 
