@@ -29,8 +29,9 @@ mod kth_smallest_pair_distance;
 mod longest_duplicate_substring;
 mod max_points_on_line;
 mod stock_iv;
+mod max_array_distance;
 
-use max_points_on_line::Solution;
+use max_array_distance::Solution;
 
 use rand::{distr::Alphanumeric, Rng}; // 0.8
 
@@ -44,7 +45,6 @@ fn rand() -> String {
 }
 
 fn main() {
-    let points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]];
-    println!("{}", Solution::gcd(-12, 8));
-    println!("{}", Solution::max_points(points.iter().map(|p|p.to_vec()).collect()))
+    let arr = [[1,5],[3,4]];
+    println!("{}", Solution::max_distance(arr.iter().map(|p|p.to_vec()).collect()))
 }
