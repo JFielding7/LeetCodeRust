@@ -30,21 +30,21 @@ mod longest_duplicate_substring;
 mod max_points_on_line;
 mod stock_iv;
 mod max_array_distance;
+mod serialize_and_deserialize_binary_tree;
 
-use max_array_distance::Solution;
-
-use rand::{distr::Alphanumeric, Rng}; // 0.8
-
-fn rand() -> String {
-    let s: String = rand::thread_rng()
-        .sample_iter(&Alphanumeric)
-        .take(30000)
-        .map(char::from)
-        .collect();
-    s
-}
+use std::cell::RefCell;
+use std::rc::Rc;
+use serialize_and_deserialize_binary_tree::{TreeNode, Codec};
 
 fn main() {
-    let arr = [[1,5],[3,4]];
-    println!("{}", Solution::max_distance(arr.iter().map(|p|p.to_vec()).collect()))
+    let root = TreeNode {
+        val: 0,
+        left: Some(Rc::new(RefCell::new(TreeNode { val: 1, left: None, right: None }))),
+        right: Some(Rc::new(RefCell::new(TreeNode { val: 2, left: None, right: None })))
+    };
+    let c= Codec::new();
+    let s = c.serialize(Some(Rc::new(RefCell::new(root))));
+    println!("{s}");
+    let t = c.deserialize(s);
+    println!("{}", t.as_ref().unwrap().borrow().val);
 }
