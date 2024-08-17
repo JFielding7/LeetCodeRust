@@ -31,20 +31,15 @@ mod max_points_on_line;
 mod stock_iv;
 mod max_array_distance;
 mod serialize_and_deserialize_binary_tree;
+mod max_points_with_cost;
 
-use std::cell::RefCell;
-use std::rc::Rc;
-use serialize_and_deserialize_binary_tree::{TreeNode, Codec};
+use max_points_with_cost::Solution;
 
 fn main() {
-    let root = TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode { val: 1, left: None, right: None }))),
-        right: Some(Rc::new(RefCell::new(TreeNode { val: 2, left: None, right: None })))
-    };
-    let c= Codec::new();
-    let s = c.serialize(Some(Rc::new(RefCell::new(root))));
-    println!("{s}");
-    let t = c.deserialize(s);
-    println!("{}", t.as_ref().unwrap().borrow().val);
+    let points = [
+        [1,2,3],
+        [1,5,1],
+        [3,1,1]
+    ];
+    println!("{}", Solution::max_points(points.iter().map(|row| row.to_vec()).collect()));
 }
