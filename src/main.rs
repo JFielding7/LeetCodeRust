@@ -32,14 +32,11 @@ mod stock_iv;
 mod max_array_distance;
 mod serialize_and_deserialize_binary_tree;
 mod max_points_with_cost;
+mod stone_game_ii;
 
-use max_points_with_cost::Solution;
+use stone_game_ii::Solution;
 
 fn main() {
-    let points = [
-        [1,2,3],
-        [1,5,1],
-        [3,1,1]
-    ];
-    println!("{}", Solution::max_points(points.iter().map(|row| row.to_vec()).collect()));
+    let piles = [1];
+    println!("{}", Solution::stone_game_ii(piles.to_vec()));
 }
