@@ -33,10 +33,14 @@ mod max_array_distance;
 mod serialize_and_deserialize_binary_tree;
 mod max_points_with_cost;
 mod stone_game_ii;
+mod strange_printer;
 
-use stone_game_ii::Solution;
+use strange_printer::Solution;
 
 fn main() {
-    let piles = [1];
-    println!("{}", Solution::stone_game_ii(piles.to_vec()));
+    // acadababcb
+    // acadabcb
+    let s = "bbbbbbbbbbb";
+    println!("{}", Solution::strange_printer(s.to_string()));
+    unsafe { println!("{} {}", s.len(), strange_printer::x); }
 }
