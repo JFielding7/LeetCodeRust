@@ -34,6 +34,7 @@ mod serialize_and_deserialize_binary_tree;
 mod max_points_with_cost;
 mod stone_game_ii;
 mod strange_printer;
+mod max_score_formed_by_letters;
 
 use strange_printer::Solution;
 
