@@ -35,6 +35,7 @@ mod max_points_with_cost;
 mod stone_game_ii;
 mod strange_printer;
 mod max_score_formed_by_letters;
+mod stone_game_iii;
 
 use strange_printer::Solution;
 
