@@ -36,13 +36,13 @@ mod stone_game_ii;
 mod strange_printer;
 mod max_score_formed_by_letters;
 mod stone_game_iii;
+mod jump_game_v;
+mod distinct_subsequences;
 
-use strange_printer::Solution;
+use jump_game_v::Solution;
 
 fn main() {
-    // acadababcb
-    // acadabcb
-    let s = "bbbbbbbbbbb";
-    println!("{}", Solution::strange_printer(s.to_string()));
-    unsafe { println!("{} {}", s.len(), strange_printer::x); }
+    let arr = [83,11,83,70,75,45,96,11,80,75,67,83,6,51,71,64,64,42,70,23,11,24,95,65,1,54,31,50,18,16,11,86,2,48,37,34,65,67,4,17,33,70,16,73,57,96,30,26,56,1,16,74,82,77,82,62,32,90,94,33,58,23,23,65,70,12,85,27,38,100,93,49,96,96,77,37,69,71,62,34,4,14,25,37,70,3,67,88,20,30];
+    let d = 29;
+    println!("{}", Solution::max_jumps(arr.to_vec(), d));
 }
