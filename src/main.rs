@@ -38,6 +38,8 @@ mod max_score_formed_by_letters;
 mod stone_game_iii;
 mod jump_game_v;
 mod distinct_subsequences;
+mod binary_tree_cameras;
+mod reducing_dishes;
 
 use jump_game_v::Solution;
 
