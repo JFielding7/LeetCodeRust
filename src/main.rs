@@ -41,11 +41,12 @@ mod distinct_subsequences;
 mod binary_tree_cameras;
 mod reducing_dishes;
 mod max_dot_product_of_two_subsequences;
+mod shortest_common_super_sequence;
 
-use max_dot_product_of_two_subsequences::Solution;
+use shortest_common_super_sequence::Solution;
 
 fn main() {
-    let a0 = [-3,-8,3,-10,1,3,9];
-    let a1 = [9,2,3,7,-9,1,-8,5,-1,-1];
-    println!("{}", Solution::max_dot_product(a0.to_vec(), a1.to_vec()));
+    let s0 = "abac";
+    let s1 = "cab";
+    println!("{}", Solution::shortest_common_supersequence(s0.to_string(), s1.to_string()));
 }
