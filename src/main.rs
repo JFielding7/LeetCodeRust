@@ -43,13 +43,14 @@ mod reducing_dishes;
 mod max_dot_product_of_two_subsequences;
 mod shortest_common_super_sequence;
 mod no_consecutive_ones;
+mod stone_game_iv;
 
-use no_consecutive_ones::Solution;
+use stone_game_iv::Solution;
 
 fn main() {
-    let n = 2;
-    for x in 0..=n {
-        println!("{:b}", x);
+    let mut losses = 0;
+    for i in 1..20000 {
+        losses += (Solution::winner_square_game(i) == false) as i32;
     }
-    println!("{}", Solution::find_integers(n));
+    unsafe { println!("{}", losses); }
 }
