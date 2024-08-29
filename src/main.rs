@@ -42,11 +42,14 @@ mod binary_tree_cameras;
 mod reducing_dishes;
 mod max_dot_product_of_two_subsequences;
 mod shortest_common_super_sequence;
+mod no_consecutive_ones;
 
-use shortest_common_super_sequence::Solution;
+use no_consecutive_ones::Solution;
 
 fn main() {
-    let s0 = "abac";
-    let s1 = "cab";
-    println!("{}", Solution::shortest_common_supersequence(s0.to_string(), s1.to_string()));
+    let n = 2;
+    for x in 0..=n {
+        println!("{:b}", x);
+    }
+    println!("{}", Solution::find_integers(n));
 }
