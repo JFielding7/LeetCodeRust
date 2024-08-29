@@ -44,13 +44,12 @@ mod max_dot_product_of_two_subsequences;
 mod shortest_common_super_sequence;
 mod no_consecutive_ones;
 mod stone_game_iv;
+mod minimum_cost_to_cut_stick;
 
-use stone_game_iv::Solution;
+use minimum_cost_to_cut_stick::Solution;
 
 fn main() {
-    let mut losses = 0;
-    for i in 1..20000 {
-        losses += (Solution::winner_square_game(i) == false) as i32;
-    }
-    unsafe { println!("{}", losses); }
+    let n = 9;
+    let cuts = [5,6,1,4,2];
+    println!("{}", Solution::min_cost(n, cuts.to_vec()));
 }
