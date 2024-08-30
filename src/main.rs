@@ -45,11 +45,12 @@ mod shortest_common_super_sequence;
 mod no_consecutive_ones;
 mod stone_game_iv;
 mod minimum_cost_to_cut_stick;
+mod stone_game_viii;
+mod minimum_number_of_increments_on_subarrays_to_form_a_target_array;
 
-use minimum_cost_to_cut_stick::Solution;
+use stone_game_viii::Solution;
 
 fn main() {
-    let n = 9;
-    let cuts = [5,6,1,4,2];
-    println!("{}", Solution::min_cost(n, cuts.to_vec()));
+    let stones = [12,-5,-43,-10,-37,12];
+    println!("{}", Solution::stone_game_viii(stones.to_vec()));
 }
