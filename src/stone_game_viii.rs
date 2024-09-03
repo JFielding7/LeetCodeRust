@@ -4,23 +4,17 @@ pub struct Solution {}
 
 impl Solution {
     pub fn stone_game_viii(stones: Vec<i32>) -> i32 {
-        let mut prev0_min = 0;
-        let mut prev1_min = 0;
-        let mut curr_min = i32::MAX;
-        let mut sum = 0;
+        let mut prefix_sum: i32 = stones.iter().sum();
+        let mut suffix_sum = 0;
         let mut score = 0;
-        let mut scores = vec![];
-        for stone in stones.iter().rev() {
-            sum += stone;
-            score = max(sum, -curr_min);
-            scores.push(score);
-            println!("{score}");
-            // println!("{curr_min} {prev1_min} {prev0_min}");
-            prev0_min = prev1_min;
-            prev1_min = curr_min;
-            curr_min = min(curr_min, score);
+        let mut min_score = i32::MAX;
+        for stone in stones[1..].iter().rev() {
+            score = max(suffix_sum, -min_score) + prefix_sum;
+            println!("{stone} {score}");
+            min_score = min(min_score, score);
+            prefix_sum -= stone;
+            suffix_sum += stone;
         }
-        println!("{:?}", scores.iter().rev().collect::<Vec<_>>());
-        max(sum, -prev0_min)
+        score
     }
 }

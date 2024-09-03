@@ -47,10 +47,16 @@ mod stone_game_iv;
 mod minimum_cost_to_cut_stick;
 mod stone_game_viii;
 mod minimum_number_of_increments_on_subarrays_to_form_a_target_array;
+mod count_palindromic_subsequences;
 
-use stone_game_viii::Solution;
+use count_palindromic_subsequences::Solution;
 
 fn main() {
-    let stones = [12,-5,-43,-10,-37,12];
-    println!("{}", Solution::stone_game_viii(stones.to_vec()));
+    let v = "0000000";
+    println!("{}", Solution::count_palindromes(v.to_string()));
+    // let stones = [25,-35,-37,4,34,43,16,-33,0,-17,-31,-42,-42,38,12,-5,-43,-10,-37,12];
+    // println!("{}", stones[..stones.len() - 3].iter().sum::<i32>());
+    // let stones = [2,-3,4,-5];
+    // [-2, 4, -5]
+    // println!("{}", Solution::stone_game_viii([-113, -10, -37, 12].to_vec()));
 }
