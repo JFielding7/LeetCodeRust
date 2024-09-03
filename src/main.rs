@@ -48,12 +48,14 @@ mod minimum_cost_to_cut_stick;
 mod stone_game_viii;
 mod minimum_number_of_increments_on_subarrays_to_form_a_target_array;
 mod count_palindromic_subsequences;
+mod maximum_sum_of_3_non_overlapping_subarrays;
 
-use count_palindromic_subsequences::Solution;
+use maximum_sum_of_3_non_overlapping_subarrays::Solution;
 
 fn main() {
-    let v = "0000000";
-    println!("{}", Solution::count_palindromes(v.to_string()));
+    let nums = [1,2,1,2,6,7,5,1];
+    let k = 2;
+    println!("{:?}", Solution::max_sum_of_three_subarrays(nums.to_vec(), k));
     // let stones = [25,-35,-37,4,34,43,16,-33,0,-17,-31,-42,-42,38,12,-5,-43,-10,-37,12];
     // println!("{}", stones[..stones.len() - 3].iter().sum::<i32>());
     // let stones = [2,-3,4,-5];
