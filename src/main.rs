@@ -49,13 +49,13 @@ mod stone_game_viii;
 mod minimum_number_of_increments_on_subarrays_to_form_a_target_array;
 mod count_palindromic_subsequences;
 mod maximum_sum_of_3_non_overlapping_subarrays;
+mod frog_jump;
 
-use maximum_sum_of_3_non_overlapping_subarrays::Solution;
+use frog_jump::Solution;
 
 fn main() {
-    let nums = [1,2,1,2,6,7,5,1];
-    let k = 2;
-    println!("{:?}", Solution::max_sum_of_three_subarrays(nums.to_vec(), k));
+    let nums = [0,1,2,3,4,8,9,11];
+    println!("{:?}", Solution::can_cross(nums.to_vec()));
     // let stones = [25,-35,-37,4,34,43,16,-33,0,-17,-31,-42,-42,38,12,-5,-43,-10,-37,12];
     // println!("{}", stones[..stones.len() - 3].iter().sum::<i32>());
     // let stones = [2,-3,4,-5];
