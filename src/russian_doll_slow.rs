@@ -4,7 +4,7 @@ use std::collections::HashMap;
 pub struct Solution {}
 
 impl Solution {
-    pub fn max_envelopes(mut envelopes: Vec<Vec<i32>>) -> i32 {
+    pub fn max_envelopes_slow(mut envelopes: Vec<Vec<i32>>) -> i32 {
         envelopes.sort_unstable_by(|a, b| {
             (a[0], -a[1]).cmp(&(b[0], -b[1]))
         });
@@ -19,7 +19,6 @@ impl Solution {
             }
         }
 
-        println!("{envelopes:?}");
         let offset = envelopes.len() - 1;
         let mut tree = vec![0; offset * 2 + 1];
         let mut max_count = 0;
@@ -41,14 +40,12 @@ impl Solution {
                 right >>= 1;
             }
             count += 1;
-            println!("{tree:?} {i}");
             let mut j = offset + i;
             while j > 0 {
                 tree[j] = max(count, tree[j]);
                 j = j - 1 >> 1;
             }
             tree[0] = max(count, tree[0]);
-            println!("{count}");
             max_count = max(max_count, count);
         }
         max_count

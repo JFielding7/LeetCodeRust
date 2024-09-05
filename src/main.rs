@@ -50,12 +50,13 @@ mod minimum_number_of_increments_on_subarrays_to_form_a_target_array;
 mod count_palindromic_subsequences;
 mod maximum_sum_of_3_non_overlapping_subarrays;
 mod frog_jump;
-mod russian_doll_envelopes_slow;
+mod russian_doll_envelopes;
+mod russian_doll_slow;
 
-use russian_doll_envelopes_slow::Solution;
+use russian_doll_envelopes::Solution;
 
 fn main() {
-    let v = [[5,4],[6,4],[6,7],[2,3]];
+    let v = [[1,1],[1,1],[1,1]];
     println!("{}", Solution::max_envelopes(v.iter().map(|a| a.to_vec()).collect()));
     // let nums = [0,1,2,3,4,8,9,11];
     // println!("{:?}", Solution::can_cross(nums.to_vec()));
