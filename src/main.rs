@@ -52,17 +52,27 @@ mod maximum_sum_of_3_non_overlapping_subarrays;
 mod frog_jump;
 mod russian_doll_envelopes;
 mod russian_doll_slow;
+mod finding_mk_average;
+mod arithmetic_slices_ii_subsequences;
 
-use russian_doll_envelopes::Solution;
+use arithmetic_slices_ii_subsequences::Solution;
 
 fn main() {
-    let v = [[1,1],[1,1],[1,1]];
-    println!("{}", Solution::max_envelopes(v.iter().map(|a| a.to_vec()).collect()));
-    // let nums = [0,1,2,3,4,8,9,11];
-    // println!("{:?}", Solution::can_cross(nums.to_vec()));
-    // let stones = [25,-35,-37,4,34,43,16,-33,0,-17,-31,-42,-42,38,12,-5,-43,-10,-37,12];
-    // println!("{}", stones[..stones.len() - 3].iter().sum::<i32>());
-    // let stones = [2,-3,4,-5];
-    // [-2, 4, -5]
-    // println!("{}", Solution::stone_game_viii([-113, -10, -37, 12].to_vec()));
+    let nums = [0,2000000000,-294967296];
+    // println!("{}", -294967296 -2000000000);
+    println!("{}", Solution::number_of_arithmetic_slices(nums.to_vec()));
+    // let mut obj = MKAverage::new(3, 1);
+    // obj.add_element(3);        // current elements are [3]
+    // obj.add_element(1);        // current elements are [3,1]
+    // obj.calculate_mk_average(); // return -1, because m = 3 and only 2 elements exist.
+    // obj.add_element(10);       // current elements are [3,1,10]
+    // obj.calculate_mk_average(); // The last 3 elements are [3,1,10].
+    // // After removing smallest and largest 1 element the container will be [3].
+    // // The average of [3] equals 3/1 = 3, return 3
+    // obj.add_element(5);        // current elements are [3,1,10,5]
+    // obj.add_element(5);        // current elements are [3,1,10,5,5]
+    // obj.add_element(5);        // current elements are [3,1,10,5,5,5]
+    // obj.calculate_mk_average(); // The last 3 elements are [5,5,5].
+    // After removing smallest and largest 1 element the container will be [5].
+    // The average of [5] equals 5/1 = 5, return 5
 }

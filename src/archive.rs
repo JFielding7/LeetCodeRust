@@ -141,3 +141,11 @@
 //     }
 //     res
 // }
+
+// let nums = [0,1,2,3,4,8,9,11];
+// println!("{:?}", Solution::can_cross(nums.to_vec()));
+// let stones = [25,-35,-37,4,34,43,16,-33,0,-17,-31,-42,-42,38,12,-5,-43,-10,-37,12];
+// println!("{}", stones[..stones.len() - 3].iter().sum::<i32>());
+// let stones = [2,-3,4,-5];
+// [-2, 4, -5]
+// println!("{}", Solution::stone_game_viii([-113, -10, -37, 12].to_vec()));
