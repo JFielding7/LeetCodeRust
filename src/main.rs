@@ -54,13 +54,13 @@ mod russian_doll_envelopes;
 mod russian_doll_slow;
 mod finding_mk_average;
 mod arithmetic_slices_ii_subsequences;
+mod minimum_distance_to_type_word_using_two_fingers;
 
-use arithmetic_slices_ii_subsequences::Solution;
+use minimum_distance_to_type_word_using_two_fingers::Solution;
 
 fn main() {
-    let nums = [0,2000000000,-294967296];
-    // println!("{}", -294967296 -2000000000);
-    println!("{}", Solution::number_of_arithmetic_slices(nums.to_vec()));
+    let s = "JDX";
+    println!("{}", Solution::minimum_distance(s.to_string()));
     // let mut obj = MKAverage::new(3, 1);
     // obj.add_element(3);        // current elements are [3]
     // obj.add_element(1);        // current elements are [3,1]
