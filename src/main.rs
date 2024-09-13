@@ -55,6 +55,7 @@ mod russian_doll_slow;
 mod finding_mk_average;
 mod arithmetic_slices_ii_subsequences;
 mod minimum_distance_to_type_word_using_two_fingers;
+mod count_unique_characters_of_all_substrings_of_a_given_string;
 
 use minimum_distance_to_type_word_using_two_fingers::Solution;
 
