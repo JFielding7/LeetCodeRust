@@ -56,12 +56,13 @@ mod finding_mk_average;
 mod arithmetic_slices_ii_subsequences;
 mod minimum_distance_to_type_word_using_two_fingers;
 mod count_unique_characters_of_all_substrings_of_a_given_string;
+mod longest_chunked_palindrome_decomposition;
 
-use minimum_distance_to_type_word_using_two_fingers::Solution;
+use longest_chunked_palindrome_decomposition::Solution;
 
 fn main() {
-    let s = "JDX";
-    println!("{}", Solution::minimum_distance(s.to_string()));
+    let s = "elvtoelvto";
+    println!("{}", Solution::longest_decomposition(s.to_string()));
     // let mut obj = MKAverage::new(3, 1);
     // obj.add_element(3);        // current elements are [3]
     // obj.add_element(1);        // current elements are [3,1]
