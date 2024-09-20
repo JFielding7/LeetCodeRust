@@ -57,6 +57,7 @@ mod arithmetic_slices_ii_subsequences;
 mod minimum_distance_to_type_word_using_two_fingers;
 mod count_unique_characters_of_all_substrings_of_a_given_string;
 mod longest_chunked_palindrome_decomposition;
+mod maximize_palindrome_length_from_subsequences;
 
 use longest_chunked_palindrome_decomposition::Solution;
 
