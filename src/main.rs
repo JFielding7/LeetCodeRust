@@ -58,12 +58,17 @@ mod minimum_distance_to_type_word_using_two_fingers;
 mod count_unique_characters_of_all_substrings_of_a_given_string;
 mod longest_chunked_palindrome_decomposition;
 mod maximize_palindrome_length_from_subsequences;
+mod kth_smallest_element_matrix_of_sorted_rows;
 
-use longest_chunked_palindrome_decomposition::Solution;
+use kth_smallest_element_matrix_of_sorted_rows::Solution;
 
 fn main() {
-    let s = "elvtoelvto";
-    println!("{}", Solution::longest_decomposition(s.to_string()));
+    let m = [[1,3,11],
+                        [2,4,6]];
+    let mat = m.iter().map(|row| row.to_vec()).collect::<Vec<Vec<i32>>>();
+    let k = 1;
+    println!("{}", Solution::kth_smallest(mat, k));
+    
     // let mut obj = MKAverage::new(3, 1);
     // obj.add_element(3);        // current elements are [3]
     // obj.add_element(1);        // current elements are [3,1]
