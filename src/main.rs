@@ -59,28 +59,11 @@ mod count_unique_characters_of_all_substrings_of_a_given_string;
 mod longest_chunked_palindrome_decomposition;
 mod maximize_palindrome_length_from_subsequences;
 mod kth_smallest_element_matrix_of_sorted_rows;
-
-use kth_smallest_element_matrix_of_sorted_rows::Solution;
+mod max_value_of_equation;
 
 fn main() {
-    let m = [[1,3,11],
-                        [2,4,6]];
-    let mat = m.iter().map(|row| row.to_vec()).collect::<Vec<Vec<i32>>>();
-    let k = 1;
-    println!("{}", Solution::kth_smallest(mat, k));
-    
-    // let mut obj = MKAverage::new(3, 1);
-    // obj.add_element(3);        // current elements are [3]
-    // obj.add_element(1);        // current elements are [3,1]
-    // obj.calculate_mk_average(); // return -1, because m = 3 and only 2 elements exist.
-    // obj.add_element(10);       // current elements are [3,1,10]
-    // obj.calculate_mk_average(); // The last 3 elements are [3,1,10].
-    // // After removing smallest and largest 1 element the container will be [3].
-    // // The average of [3] equals 3/1 = 3, return 3
-    // obj.add_element(5);        // current elements are [3,1,10,5]
-    // obj.add_element(5);        // current elements are [3,1,10,5,5]
-    // obj.add_element(5);        // current elements are [3,1,10,5,5,5]
-    // obj.calculate_mk_average(); // The last 3 elements are [5,5,5].
-    // After removing smallest and largest 1 element the container will be [5].
-    // The average of [5] equals 5/1 = 5, return 5
+    let points = [[-15,-1],[-14,-5],[-11,1],[-9,7],[-8,18],[-7,-5],[-3,3],[4,14],[12,-4],[13,15],[14,-19],[19,-1]];
+    let k = 8;
+     let res = max_value_of_equation::Solution::find_max_value_of_equation(points.iter().map(|p| p.to_vec()).collect(), k);
+    println!("{}", res);
 }
