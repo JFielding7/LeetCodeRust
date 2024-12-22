@@ -60,10 +60,11 @@ mod longest_chunked_palindrome_decomposition;
 mod maximize_palindrome_length_from_subsequences;
 mod kth_smallest_element_matrix_of_sorted_rows;
 mod max_value_of_equation;
+mod maximum_performance_of_a_team;
 
 fn main() {
-    let points = [[-15,-1],[-14,-5],[-11,1],[-9,7],[-8,18],[-7,-5],[-3,3],[4,14],[12,-4],[13,15],[14,-19],[19,-1]];
-    let k = 8;
-     let res = max_value_of_equation::Solution::find_max_value_of_equation(points.iter().map(|p| p.to_vec()).collect(), k);
-    println!("{}", res);
+    let speed = [2,10,3,1,5,8];
+    let eff =   [5,4, 3,9,7,2];
+    let k = 3;
+    println!("{}", maximum_performance_of_a_team::Solution::max_performance(speed.len() as i32, speed.to_vec(), eff.to_vec(), k));
 }
