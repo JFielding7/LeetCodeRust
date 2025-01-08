@@ -63,14 +63,11 @@ mod max_value_of_equation;
 mod maximum_performance_of_a_team;
 mod n_queens;
 mod profitable_schemes;
+mod distinct_echo_substrings;
 
-use profitable_schemes::Solution;
+use distinct_echo_substrings::Solution;
 
 fn main() {
-    let n = 1;
-    let min_profit = 1;
-    let group = [1,1];
-    let profit = [0,1];
-    let s = Solution::profitable_schemes(n, min_profit, group.to_vec(), profit.to_vec());
-    println!("{s:?}");
+    let text = "abcabcabc";
+    println!("{}", Solution::distinct_echo_substrings(text.to_string()));
 }
