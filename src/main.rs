@@ -64,10 +64,12 @@ mod maximum_performance_of_a_team;
 mod n_queens;
 mod profitable_schemes;
 mod distinct_echo_substrings;
+mod largest_palindrome_divisible_by_k;
 
-use distinct_echo_substrings::Solution;
+use largest_palindrome_divisible_by_k::Solution;
 
 fn main() {
-    let text = "abcabcabc";
-    println!("{}", Solution::distinct_echo_substrings(text.to_string()));
+    let n = 7;
+    let k = 8;
+    println!("{}", Solution::largest_palindrome(n, k));
 }
