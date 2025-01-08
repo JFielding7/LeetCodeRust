@@ -62,9 +62,15 @@ mod kth_smallest_element_matrix_of_sorted_rows;
 mod max_value_of_equation;
 mod maximum_performance_of_a_team;
 mod n_queens;
-use n_queens::Solution;
+mod profitable_schemes;
+
+use profitable_schemes::Solution;
 
 fn main() {
-    let s = Solution::solve_n_queens(8);
+    let n = 1;
+    let min_profit = 1;
+    let group = [1,1];
+    let profit = [0,1];
+    let s = Solution::profitable_schemes(n, min_profit, group.to_vec(), profit.to_vec());
     println!("{s:?}");
 }
