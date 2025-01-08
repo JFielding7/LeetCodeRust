@@ -61,10 +61,10 @@ mod maximize_palindrome_length_from_subsequences;
 mod kth_smallest_element_matrix_of_sorted_rows;
 mod max_value_of_equation;
 mod maximum_performance_of_a_team;
+mod n_queens;
+use n_queens::Solution;
 
 fn main() {
-    let speed = [2,10,3,1,5,8];
-    let eff =   [5,4, 3,9,7,2];
-    let k = 3;
-    println!("{}", maximum_performance_of_a_team::Solution::max_performance(speed.len() as i32, speed.to_vec(), eff.to_vec(), k));
+    let s = Solution::solve_n_queens(8);
+    println!("{s:?}");
 }
