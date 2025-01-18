@@ -65,6 +65,8 @@ mod n_queens;
 mod profitable_schemes;
 mod distinct_echo_substrings;
 mod largest_palindrome_divisible_by_k;
+mod count_different_palindromic_subsequences;
+mod n_queens1;
 
 use largest_palindrome_divisible_by_k::Solution;
 
