@@ -69,10 +69,15 @@ mod count_different_palindromic_subsequences;
 mod n_queens1;
 mod split_array_with_same_average;
 
+use rand::Rng;
 use split_array_with_same_average::Solution;
 
+fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
+    let mut rng = rand::thread_rng();
+    (0..n).map(|_| rng.gen_range(a..b)).collect()
+}
 
 fn main() {
-    let nums = [1,2,3,4,5,6,7,8];
+    let nums = random_array(100, 0, 1000);
     println!("{}", Solution::split_array_same_average(nums.to_vec()));
 }
