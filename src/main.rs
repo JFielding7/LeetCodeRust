@@ -67,11 +67,12 @@ mod distinct_echo_substrings;
 mod largest_palindrome_divisible_by_k;
 mod count_different_palindromic_subsequences;
 mod n_queens1;
+mod split_array_with_same_average;
 
-use largest_palindrome_divisible_by_k::Solution;
+use split_array_with_same_average::Solution;
+
 
 fn main() {
-    let n = 7;
-    let k = 8;
-    println!("{}", Solution::largest_palindrome(n, k));
+    let nums = [1,2,3,4,5,6,7,8];
+    println!("{}", Solution::split_array_same_average(nums.to_vec()));
 }
