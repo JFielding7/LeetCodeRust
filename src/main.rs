@@ -68,9 +68,11 @@ mod largest_palindrome_divisible_by_k;
 mod count_different_palindromic_subsequences;
 mod n_queens1;
 mod split_array_with_same_average;
+mod remove_boxes;
+mod maximum_height_by_stacking_cuboids;
 
 use rand::Rng;
-use split_array_with_same_average::Solution;
+use maximum_height_by_stacking_cuboids::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -78,6 +80,7 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let nums = random_array(100, 0, 1000);
-    println!("{}", Solution::split_array_same_average(nums.to_vec()));
+    let cuboids = [[50,45,20],[95,37,53],[45,23,12]];
+    let c = cuboids.iter().map(|c| c.to_vec()).collect::<Vec<_>>();
+    println!("{}", Solution::max_height(c))
 }
