@@ -71,9 +71,10 @@ mod split_array_with_same_average;
 mod remove_boxes;
 mod maximum_height_by_stacking_cuboids;
 mod minimum_xor_sum;
+mod parallel_courses_ii;
 
 use rand::Rng;
-use minimum_xor_sum::Solution;
+use parallel_courses_ii::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -81,8 +82,11 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let v0 = [72,97,8,32,15];
-    let v1 = [63,97,57,60,83];
-    println!("{}", (72 ^ 72) + (97 ^ 72));
-    println!("{}", Solution::minimum_xor_sum(v0.to_vec(), v1.to_vec()));
+    let n = 1;
+    let relations: Vec<Vec<i32>> = vec![];
+    let time = [69];
+
+    println!("{}", Solution::minimum_time(n, relations.iter().map(|arr| arr.to_vec()).collect(), time.to_vec()));
+    let v = vec![0, 2, 3, 1];
+    println!("{:?}", v.iter().reduce(|m, e| m.max(e)));
 }
