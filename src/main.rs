@@ -72,9 +72,11 @@ mod remove_boxes;
 mod maximum_height_by_stacking_cuboids;
 mod minimum_xor_sum;
 mod parallel_courses_ii;
+mod count_of_smaller_numbers_after_self;
 
+use std::collections::BTreeSet;
 use rand::Rng;
-use parallel_courses_ii::Solution;
+use count_of_smaller_numbers_after_self::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -82,11 +84,12 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let n = 1;
-    let relations: Vec<Vec<i32>> = vec![];
-    let time = [69];
+    let nums = [26,78,27,100,33,67,90,23,66,5,38,7,35,23,52,22,83,51,98,69,81,32,78,28,94,13,2,97,3,76,99,51,9,21,84,66,65,36,100,41];
+    println!("{:?}", Solution::count_smaller(nums.to_vec()));
+    let mut bst = BTreeSet::new();
+    for i in 0..10 {
+        bst.insert(i);
+    }
 
-    println!("{}", Solution::minimum_time(n, relations.iter().map(|arr| arr.to_vec()).collect(), time.to_vec()));
-    let v = vec![0, 2, 3, 1];
-    println!("{:?}", v.iter().reduce(|m, e| m.max(e)));
+    println!("{:?}", bst.range(3..6).count());
 }
