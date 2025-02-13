@@ -16,7 +16,7 @@ mod median_finder;
 mod palindrome_pairs;
 mod reverse_pairs;
 mod sliding_puzzle;
-mod sliding_window_median;
+// mod sliding_window_median;
 mod palindrome_partitioning_iii;
 mod min_insertions_to_make_palindrome;
 mod two_sum;
@@ -70,9 +70,10 @@ mod n_queens1;
 mod split_array_with_same_average;
 mod remove_boxes;
 mod maximum_height_by_stacking_cuboids;
+mod minimum_xor_sum;
 
 use rand::Rng;
-use maximum_height_by_stacking_cuboids::Solution;
+use minimum_xor_sum::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -80,7 +81,8 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let cuboids = [[50,45,20],[95,37,53],[45,23,12]];
-    let c = cuboids.iter().map(|c| c.to_vec()).collect::<Vec<_>>();
-    println!("{}", Solution::max_height(c))
+    let v0 = [72,97,8,32,15];
+    let v1 = [63,97,57,60,83];
+    println!("{}", (72 ^ 72) + (97 ^ 72));
+    println!("{}", Solution::minimum_xor_sum(v0.to_vec(), v1.to_vec()));
 }
