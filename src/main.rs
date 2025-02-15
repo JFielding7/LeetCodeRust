@@ -75,9 +75,10 @@ mod parallel_courses_ii;
 mod count_of_smaller_numbers_after_self;
 mod perfect_rectangle;
 mod minimum_cost_for_cutting_cake_ii;
+mod kth_smallest_number_multiplication_table;
 
 use rand::Rng;
-use minimum_cost_for_cutting_cake_ii::Solution;
+use kth_smallest_number_multiplication_table::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -85,10 +86,8 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let m = 2;
-    let n = 2;
-    let horizontalCut = [7];
-    let verticalCut = [4];
-
-    println!("{}", Solution::minimum_cost(m, n, horizontalCut.to_vec(), verticalCut.to_vec()));
+    let m = 3;
+    let n = 3;
+    let k = 5;
+    println!("{}", Solution::find_kth_number(m, n, k));
 }
