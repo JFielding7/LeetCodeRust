@@ -73,10 +73,11 @@ mod maximum_height_by_stacking_cuboids;
 mod minimum_xor_sum;
 mod parallel_courses_ii;
 mod count_of_smaller_numbers_after_self;
+mod perfect_rectangle;
+mod minimum_cost_for_cutting_cake_ii;
 
-use std::collections::BTreeSet;
 use rand::Rng;
-use count_of_smaller_numbers_after_self::Solution;
+use minimum_cost_for_cutting_cake_ii::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -84,12 +85,10 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let nums = [26,78,27,100,33,67,90,23,66,5,38,7,35,23,52,22,83,51,98,69,81,32,78,28,94,13,2,97,3,76,99,51,9,21,84,66,65,36,100,41];
-    println!("{:?}", Solution::count_smaller(nums.to_vec()));
-    let mut bst = BTreeSet::new();
-    for i in 0..10 {
-        bst.insert(i);
-    }
+    let m = 2;
+    let n = 2;
+    let horizontalCut = [7];
+    let verticalCut = [4];
 
-    println!("{:?}", bst.range(3..6).count());
+    println!("{}", Solution::minimum_cost(m, n, horizontalCut.to_vec(), verticalCut.to_vec()));
 }
