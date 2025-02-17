@@ -78,9 +78,10 @@ mod minimum_cost_for_cutting_cake_ii;
 mod kth_smallest_number_multiplication_table;
 mod ipo;
 mod shortest_path_visiting_all_nodes;
+mod constrained_subsequence_sum;
 
 use rand::Rng;
-use shortest_path_visiting_all_nodes::Solution;
+use constrained_subsequence_sum::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -88,7 +89,7 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let graph = vec![vec![1], vec![0,2,4], vec![1,3,4], vec![2], vec![1,2]];
-    // let graph = vec![vec![1,2,3], vec![0], vec![0], vec![0]];
-    println!("{:?}", Solution::shortest_path_length(graph));
+    let nums = [10,0,0,5,20];
+    let k = 2;
+    println!("{}", Solution::constrained_subset_sum(nums.to_vec(), k));
 }
