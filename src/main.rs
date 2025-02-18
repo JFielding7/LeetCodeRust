@@ -79,6 +79,7 @@ mod kth_smallest_number_multiplication_table;
 mod ipo;
 mod shortest_path_visiting_all_nodes;
 mod constrained_subsequence_sum;
+mod burst_balloons;
 
 use rand::Rng;
 use constrained_subsequence_sum::Solution;
