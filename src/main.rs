@@ -81,9 +81,10 @@ mod shortest_path_visiting_all_nodes;
 mod constrained_subsequence_sum;
 mod burst_balloons;
 mod chalkboard_xor_game;
+mod number_of_visible_people_in_a_queue;
 
 use rand::Rng;
-use constrained_subsequence_sum::Solution;
+use number_of_visible_people_in_a_queue::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -91,7 +92,6 @@ fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
 }
 
 fn main() {
-    let nums = [10,0,0,5,20];
-    let k = 2;
-    println!("{}", Solution::constrained_subset_sum(nums.to_vec(), k));
+    let people = [1,1,1,1];
+    println!("{:?}", Solution::can_see_persons_count(people.to_vec()));
 }
