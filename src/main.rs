@@ -80,6 +80,7 @@ mod ipo;
 mod shortest_path_visiting_all_nodes;
 mod constrained_subsequence_sum;
 mod burst_balloons;
+mod chalkboard_xor_game;
 
 use rand::Rng;
 use constrained_subsequence_sum::Solution;
