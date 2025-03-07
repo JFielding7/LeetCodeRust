@@ -82,6 +82,7 @@ mod constrained_subsequence_sum;
 mod burst_balloons;
 mod chalkboard_xor_game;
 mod number_of_visible_people_in_a_queue;
+mod maximum_frequency_stack;
 
 use rand::Rng;
 use number_of_visible_people_in_a_queue::Solution;
