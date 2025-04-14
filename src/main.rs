@@ -85,9 +85,10 @@ mod number_of_visible_people_in_a_queue;
 mod maximum_frequency_stack;
 mod orderly_queue;
 mod parsing_a_boolean_expression;
+mod edit_distance;
 
 use rand::Rng;
-use parsing_a_boolean_expression::Solution;
+use edit_distance::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -102,6 +103,7 @@ fn f(n: i32) -> i32 {
 }
 
 fn main() {
-    let expr = "|(f,f,f,t)";
-    println!("{}", Solution::parse_bool_expr(expr.to_string()))
+    let word1 = "intention";
+    let word2 = "execution";
+    println!("{}", Solution::min_distance(word1.to_string(), word2.to_string()))
 }
