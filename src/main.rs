@@ -83,16 +83,25 @@ mod burst_balloons;
 mod chalkboard_xor_game;
 mod number_of_visible_people_in_a_queue;
 mod maximum_frequency_stack;
+mod orderly_queue;
+mod parsing_a_boolean_expression;
 
 use rand::Rng;
-use number_of_visible_people_in_a_queue::Solution;
+use parsing_a_boolean_expression::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
     (0..n).map(|_| rng.gen_range(a..b)).collect()
 }
 
+fn f(n: i32) -> i32 {
+    if n == 0 {
+        return 0;
+    }
+    1 + f(n-1)
+}
+
 fn main() {
-    let people = [1,1,1,1];
-    println!("{:?}", Solution::can_see_persons_count(people.to_vec()));
+    let expr = "|(f,f,f,t)";
+    println!("{}", Solution::parse_bool_expr(expr.to_string()))
 }
