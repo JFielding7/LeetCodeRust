@@ -86,9 +86,10 @@ mod maximum_frequency_stack;
 mod orderly_queue;
 mod parsing_a_boolean_expression;
 mod edit_distance;
+mod swin_in_rising_water;
 
 use rand::Rng;
-use edit_distance::Solution;
+use swin_in_rising_water::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -103,7 +104,6 @@ fn f(n: i32) -> i32 {
 }
 
 fn main() {
-    let word1 = "intention";
-    let word2 = "execution";
-    println!("{}", Solution::min_distance(word1.to_string(), word2.to_string()))
+    let grid = [[0]];
+    println!("{}", Solution::swim_in_water(grid.iter().map(|row| row.to_vec()).collect()))
 }
