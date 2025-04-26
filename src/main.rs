@@ -87,9 +87,10 @@ mod orderly_queue;
 mod parsing_a_boolean_expression;
 mod edit_distance;
 mod swin_in_rising_water;
+mod contains_duplicate_iii;
 
 use rand::Rng;
-use swin_in_rising_water::Solution;
+use contains_duplicate_iii::Solution;
 
 fn random_array(n: usize, a: i32, b: i32) -> Vec<i32> {
     let mut rng = rand::thread_rng();
@@ -104,6 +105,6 @@ fn f(n: i32) -> i32 {
 }
 
 fn main() {
-    let grid = [[0]];
-    println!("{}", Solution::swim_in_water(grid.iter().map(|row| row.to_vec()).collect()))
+    let nums = [1,5,9,1,5,9];
+    println!("{}", Solution::contains_nearby_almost_duplicate(nums.to_vec(), 2, 3))
 }
